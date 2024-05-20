@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/var/www/html
+    depends_on:
+      - mysqldb
+
+  mysqldb:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: abcd1234XYZ
+      MYSQL_DATABASE: wedding
+      MYSQL_USER: dbusr
+      MYSQL_PASSWORD: BuKuT4Mu_PwD
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
