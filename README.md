@@ -39,3 +39,16 @@ Konfirmasi penghapusan untuk mencegah penghapusan data yang tidak disengaja.
 2. Database: MySQL untuk penyimpanan data tamu.
 3. Frontend: HTML, CSS, dan Bootstrap.
 4. Docker: Docker dan Docker Compose untuk memudahkan proses pengembangan dan deployment aplikasi dalam lingkungan yang terisolasi.
+
+## Instalasi
+
+Spesifikasi
+- OS: Linux (Ubuntu)
+- Deployment: Docker Based
+
+```
+sudo apt install git docker.io docker-compose -y
+git clone https://github.com/xchopath/bukutamu-pernikahaan
+cd bukutamu-pernikahaan
+sudo bash install.sh
+```
