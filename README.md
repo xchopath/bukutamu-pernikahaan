@@ -40,7 +40,7 @@ Konfirmasi penghapusan untuk mencegah penghapusan data yang tidak disengaja.
 3. Frontend: HTML, CSS, dan Bootstrap.
 4. Docker: Docker dan Docker Compose untuk memudahkan proses pengembangan dan deployment aplikasi dalam lingkungan yang terisolasi.
 
-## Instalasi
+## Installation
 
 Spesifikasi
 - OS: Linux (Ubuntu)
