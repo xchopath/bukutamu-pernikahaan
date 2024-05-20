@@ -7,8 +7,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $message = $_POST['message'];
 
-    $stmt = $pdo->prepare('UPDATE guests SET name = :name, email = :email, message = :message WHERE id = :id');
-    $stmt->execute([
+    $statement = $pdo->prepare('UPDATE guests SET name = :name, email = :email, message = :message WHERE id = :id');
+    $statement->execute([
         ':name' => $name,
         ':email' => $email,
         ':message' => $message,
@@ -19,9 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit;
 } else {
     $id = $_GET['id'];
-    $stmt = $pdo->prepare('SELECT * FROM guests WHERE id = :id');
-    $stmt->execute([':id' => $id]);
-    $guest = $stmt->fetch();
+    $statement = $pdo->prepare('SELECT * FROM guests WHERE id = :id');
+    $statement->execute([':id' => $id]);
+    $guest = $statement->fetch();
 }
 
 ?>
