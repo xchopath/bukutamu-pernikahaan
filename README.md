@@ -1,4 +1,4 @@
-Aplikasi ini dibuat untuk memenuhi pengerjaan tugas Mata Kuliah **Pemrograman Web II**.
+Aplikasi ini dibuat untuk memenuhi pengerjaan Ujian Tengah Semester Mata Kuliah **Pemrograman Web II**.
 
 ```
 Nama  : Novran Faathir Alfathan Suposo
