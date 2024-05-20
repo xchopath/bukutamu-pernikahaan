@@ -11,15 +11,15 @@
         <h1 class="mt-5">Buku Tamu Pernikahan</h1>
         <form action="submit_guest.php" method="post" class="mt-4">
             <div class="form-group">
-                <label for="name">Nama</label>
+                <label for="name">Nama:</label>
                 <input type="text" id="name" name="name" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">Email:</label>
                 <input type="email" id="email" name="email" class="form-control">
             </div>
             <div class="form-group">
-                <label for="message">Pesan</label>
+                <label for="message">Pesan:</label>
                 <textarea id="message" name="message" rows="4" class="form-control"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -28,12 +28,14 @@
         <ul class="list-group mt-3">
         <?php
         require 'db.php';
-        $stmt = $pdo->query('SELECT name, email, message, created_at FROM guests ORDER BY created_at DESC');
+        $stmt = $pdo->query('SELECT id, name, email, message, created_at FROM guests ORDER BY created_at DESC');
         while ($row = $stmt->fetch()) {
             echo '<li class="list-group-item">';
             echo '<strong>' . htmlspecialchars($row['name']) . '</strong> (' . htmlspecialchars($row['email']) . ')<br>';
             echo nl2br(htmlspecialchars($row['message'])) . '<br>';
-            echo '<small class="text-muted">' . $row['created_at'] . '</small>';
+            echo '<small class="text-muted">' . $row['created_at'] . '</small><br>';
+            echo '<a href="edit_guest.php?id=' . $row['id'] . '" class="btn btn-warning btn-sm mt-2">Update</a> ';
+            echo '<a href="delete_guest.php?id=' . $row['id'] . '" class="btn btn-danger btn-sm mt-2" onclick="return confirm(\'Are you sure you want to delete this guest?\');">Delete</a>';
             echo '</li>';
         }
         ?>
